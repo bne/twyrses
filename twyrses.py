@@ -181,6 +181,7 @@ class Twyrses(object):
 					self.timeline.keypress((self.size[0], self.size[1]/2), k)
 				elif k == 'up' or k == 'down':
 				
+					# TODO: fix buffer index incrementing
 					if k == 'up' and \
 					len(self.cmd_buffer) < self.cmd_buffer_idx:
 						self.cmd_buffer_idx += 1
@@ -261,6 +262,14 @@ class Twyrses(object):
 			self.draw_timeline()
 						
 		elif cmd == 'search':
+			# Search not implemented in the main python-twitter branch yet -
+			# seriously considering sacking off python-twitter tbh, I mean
+			# it's only a load of json calls innit? will need to anyway
+			# once we implement OAuth as it doesn't look like that's 
+			# supported yet either.
+			# Anyhoo, enough rambling:
+			return
+			
 			if len(params) == 0:
 				self.set_header_text("/search [terms]")
 				return				
